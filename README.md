@@ -15,5 +15,6 @@
 - Create **PR** (*pull request*) to master branch with your changes.
 
 ##### Tips
-- Use icons: 'glyphicon-star' and 'glyphicon-star-empty'
+- Use icons: 'glyphicon-star' and 'glyphicon-star-empty':
+
 ![stars](images/stars.png)
