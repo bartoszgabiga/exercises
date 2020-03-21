@@ -3,6 +3,7 @@
 ### Using Bootstap and its glyhicons -  create simple page with clickable Star icon.
 
 #### Basic
+- Create empty **index.html** file.
 - Add Bootstrap to your page. Use **w3schools** to learn how to do that.
 - Add **star icon** to your html code.
 - Star should change its appearance from full-color to border-only when clicked.
