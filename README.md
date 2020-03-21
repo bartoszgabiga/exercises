@@ -16,4 +16,4 @@
 
 ##### Tips
 - Use icons: 'glyphicon-star' and 'glyphicon-star-empty'
-![Start](images/stars.png)
+![stars](images/stars.png)
