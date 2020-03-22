@@ -16,6 +16,7 @@
 - Create **PR** (*pull request*) to master branch with your changes.
 
 ##### Tips
+- You can learn what is git here: [Learn Git in 20 Minutes](https://www.youtube.com/watch?v=Y9XZQO1n_7c)
 - Use icons: 'glyphicon-star' and 'glyphicon-star-empty':
 
 ![stars](images/stars.png)
