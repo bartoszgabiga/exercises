@@ -1,20 +1,65 @@
-#container
-{
-    background-color:firebrick;
-    width: 300px;
-    height: 300px;
-    margin:300px auto 0 auto;
-    border-radius: 5%;
-    }
+#container, #mainContainer {
+    background-color: lightgray;
+    width: 1200px;
+    height: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 100px;
+    padding: 85px;
+}
 
-#star
-{
+.navContainer {
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#star {
     font-size: 150px;
     margin: 75px;
 }
 
-#star:hover
-{
+#star:hover {
     transform: scale(1.05);
     cursor: pointer;
+}
+
+.card {
+    background-color: whitesmoke;
+    width: 300px;
+    height: auto;
+    text-align: center;
+    padding: 12px;
+    border-radius: 5px;
+    float: left;
+    margin: 20px;
+}
+
+.cardTitle {
+    background-color: gainsboro;
+    width: 276px;
+    height: 50px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.cardDescription {
+    background-color: whitesmoke;
+    width: 276px;
+    height: auto;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+}
+
+.cardTitle:hover {
+    cursor: pointer;
+}
+
+.navbar {
+    margin-bottom: 0 !important;
 }
