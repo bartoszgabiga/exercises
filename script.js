@@ -13,7 +13,7 @@
 let array = [{id: 1}, {id: 2}, {id: 3}, {id: 4}, {id: 5}, {id: 6}, {id: 7}, {id: 8}];
 let arraylength = array.length;
 
-function createCard() {
+function createSingleCard() {
     let myCardDiv = document.createElement("div");
     myCardDiv.setAttribute("class", "card");
 
@@ -33,7 +33,7 @@ function createCard() {
 }
 function createCards() {
     for (let i = 0; i < arraylength; i++) {
-        createCard();
+        createSingleCard();
 
     }
 }
