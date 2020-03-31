@@ -1,19 +1,9 @@
-// function changeClass() {
-//     let star = document.getElementById("star");
-//
-//     if (star.classList.contains("glyphicon-star")) {
-//         star.className = "glyphicon glyphicon-star-empty";
-//     }
-//     else {
-//         star.className = "glyphicon glyphicon-star";
-//     }
-// }
-//
 
-let array = [{id: 1}, {id: 2}, {id: 3}, {id: 4}, {id: 5}, {id: 6}, {id: 7}, {id: 8}];
+
+let array = [{id:1}, {id: 2}, {id: 3}, {id: 4}, {id: 5}, {id: 6}, {id: 7}, {id: 8}];
 let arraylength = array.length;
 
-function createSingleCard() {
+function createSingleCard(i) {
     let myCardDiv = document.createElement("div");
     myCardDiv.setAttribute("class", "card");
 
@@ -30,11 +20,27 @@ function createSingleCard() {
     t-bone tail pancetta flank. Andouille short loin cupim, sirloin picanha porchetta biltong.`;
     myCardDiv.appendChild(myDescription);
 
+
+    let myStar = document.createElement("div");
+    myStar.setAttribute("class", "glyphicon glyphicon-star-empty star");
+    myStar.setAttribute("onclick", "changeClass("+i+")");
+    myStar.setAttribute("id", i);
+    myCardDiv.appendChild(myStar);
+
+
 }
 function createCards() {
     for (let i = 0; i < arraylength; i++) {
-        createSingleCard();
-
+        createSingleCard(i);
     }
 }
 
+function changeClass(starId) {
+    let star = document.getElementById(starId);
+    if (star.classList.contains("glyphicon-star")) {
+        star.className = "glyphicon glyphicon-star-empty star";
+    }
+    else {
+        star.className = "glyphicon glyphicon-star star";
+    }
+}
