@@ -14,12 +14,12 @@
     margin-right: auto;
 }
 
-#star {
-    font-size: 150px;
-    margin: 75px;
+.star {
+    font-size: 40px;
+    margin-left: 235px;
 }
 
-#star:hover {
+.star:hover {
     transform: scale(1.05);
     cursor: pointer;
 }
