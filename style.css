@@ -38,18 +38,20 @@
 .cardTitle {
     background-color: gainsboro;
     width: 276px;
-    height: 50px;
+    height: 60px;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
     padding: 10px;
     border-radius: 5px;
+    margin-top:5px;
+    margin-bottom:5px;
 }
 
 .cardDescription {
     background-color: whitesmoke;
     width: 276px;
-    height: auto;
+    height: 120px;
     text-align: center;
     margin-left: auto;
     margin-right: auto;

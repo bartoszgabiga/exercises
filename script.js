@@ -1,6 +1,22 @@
+let array = [{
+    uniqueNum: 1,
+    title: "DORSZ W KREMOWYM SOSIE ZE SZPARAGAMI I CHORIZO",
+    description: "Polędwiczka z dorsza w kremowym sosie ze szparagami i podsmażoną kiełbaską chorizo."
+}, {
+    uniqueNum: 2,
+    title: "STIR-FRY Z WOŁOWINĄ I BROKUŁAMI",
+    description: "Kolejna propozycja na danie z woka. Tym razem wykonanie jest naprawdę błyskawiczne."
+}, {
+    uniqueNum: 3,
+    title: "KURCZAK W KREMOWYM SOSIE POMIDOROWO-KOPERKOWYM",
+    description: "Delikatne, miękkie i kruche fileciki z kurczaka w sosie ze śmietanki z dodatkiem koperku i koncentratu" +
+    " pomidorowego."
+}, {
+    uniqueNum: 4,
+    title: "MAKARON Z KURCZAKIEM I SZPINAKIEM W SOSIE PESTO",
+    description: "Smaczny makaron z kawałkami podsmażonego filetu z kurczaka, szpinakiem oraz kremowym sosem ze śmietanki i pesto."
+}];
 
-
-let array = [{id:1}, {id: 2}, {id: 3}, {id: 4}, {id: 5}, {id: 6}, {id: 7}, {id: 8}];
 let arraylength = array.length;
 
 function createSingleCard(i) {
@@ -11,19 +27,18 @@ function createSingleCard(i) {
 
     let myTitle = document.createElement("div");
     myTitle.setAttribute("class", "cardTitle");
-    myTitle.innerHTML = "Title";
+    myTitle.innerHTML = array[i].title;
     myCardDiv.appendChild(myTitle);
 
     let myDescription = document.createElement("div");
     myDescription.setAttribute("class", "cardDescription ");
-    myDescription.innerHTML = `  Bacon ipsum dolor amet frankfurter cupim ribeye salami rump buffalo alcatra kevin, 
-    t-bone tail pancetta flank. Andouille short loin cupim, sirloin picanha porchetta biltong.`;
+    myDescription.innerHTML =array[i].description;
     myCardDiv.appendChild(myDescription);
 
 
     let myStar = document.createElement("div");
     myStar.setAttribute("class", "glyphicon glyphicon-star-empty star");
-    myStar.setAttribute("onclick", "changeClass("+i+")");
+    myStar.setAttribute("onclick", "changeClass(" + i + ")");
     myStar.setAttribute("id", i);
     myCardDiv.appendChild(myStar);
 
