@@ -1,21 +1,23 @@
-let array = [{
-    uniqueNum: 1,
-    title: "DORSZ W KREMOWYM SOSIE ZE SZPARAGAMI I CHORIZO",
-    description: "Polędwiczka z dorsza w kremowym sosie ze szparagami i podsmażoną kiełbaską chorizo."
-}, {
-    uniqueNum: 2,
-    title: "STIR-FRY Z WOŁOWINĄ I BROKUŁAMI",
-    description: "Kolejna propozycja na danie z woka. Tym razem wykonanie jest naprawdę błyskawiczne."
-}, {
-    uniqueNum: 3,
-    title: "KURCZAK W KREMOWYM SOSIE POMIDOROWO-KOPERKOWYM",
-    description: "Delikatne, miękkie i kruche fileciki z kurczaka w sosie ze śmietanki z dodatkiem koperku i koncentratu" +
-    " pomidorowego."
-}, {
-    uniqueNum: 4,
-    title: "MAKARON Z KURCZAKIEM I SZPINAKIEM W SOSIE PESTO",
-    description: "Smaczny makaron z kawałkami podsmażonego filetu z kurczaka, szpinakiem oraz kremowym sosem ze śmietanki i pesto."
-}];
+let array = [
+    {
+        uniqueNum: 1,
+        title: "DORSZ W KREMOWYM SOSIE ZE SZPARAGAMI I CHORIZO",
+        description: "Polędwiczka z dorsza w kremowym sosie ze szparagami i podsmażoną kiełbaską chorizo."
+    }, {
+        uniqueNum: 2,
+        title: "STIR-FRY Z WOŁOWINĄ I BROKUŁAMI",
+        description: "Kolejna propozycja na danie z woka. Tym razem wykonanie jest naprawdę błyskawiczne."
+    }, {
+        uniqueNum: 3,
+        title: "KURCZAK W KREMOWYM SOSIE POMIDOROWO-KOPERKOWYM",
+        description: "Delikatne, miękkie i kruche fileciki z kurczaka w sosie ze śmietanki z dodatkiem koperku i koncentratu" +
+        " pomidorowego."
+    }, {
+        uniqueNum: 4,
+        title: "MAKARON Z KURCZAKIEM I SZPINAKIEM W SOSIE PESTO",
+        description: "Smaczny makaron z kawałkami podsmażonego filetu z kurczaka, szpinakiem oraz kremowym sosem ze śmietanki i pesto."
+    }
+];
 
 function createCardDiv() {
     let myCardDiv = document.createElement("div");
@@ -68,20 +70,27 @@ function createNewCard(i) {
 
 document.getElementById("addCardButton").addEventListener("click", addCard);
 function addCard() {
+    console.log(document.getElementById("title"));
+    let formTitle = document.getElementById("title");
+    let fromDes = document.getElementById("recipeDescription");
     let addCardId = array.length;
-    addCardContent();
-    createNewCard(addCardId)
-}
 
-function addCardContent() {
+    addCardContent(formTitle.value, fromDes.value);
+    createNewCard(addCardId)
+    formTitle.value = '';
+    fromDes.value = '';
+
+    console.log(formTitle);
+    console.log(fromDes);
+
+}
+function addCardContent(a, b) {
     array.push({
-        uniqueNum: 5,
-        title: "SURÓWKA Z WCZESNEJ KAPUSTY ZE SŁODKIM SOSEM CHILI",
-        description: "Pyszna i chrupiąca surówka z młodej kapusty, do której można oczywiście wykorzystać również" +
-        " kapustę pekińską."
+        uniqueNum: array.length + 1,
+        title: a,
+        description: b
     })
 }
-
 function changeClass(starId) {
     let star = document.getElementById(starId);
     if (star.classList.contains("glyphicon-star")) {
