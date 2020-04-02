@@ -17,8 +17,6 @@ let array = [{
     description: "Smaczny makaron z kawałkami podsmażonego filetu z kurczaka, szpinakiem oraz kremowym sosem ze śmietanki i pesto."
 }];
 
-let arraylength = array.length;
-
 function createCardDiv() {
     let myCardDiv = document.createElement("div");
     myCardDiv.setAttribute("class", "card");
@@ -56,7 +54,7 @@ function createSingleCard(i) {
 }
 
 function createCards() {
-    for (let i = 0; i < arraylength - 1; i++) {
+    for (let i = 0; i < array.length - 1; i++) {
         createSingleCard(i);
     }
 }
