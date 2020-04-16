@@ -16,12 +16,23 @@
 
 .star {
     font-size: 40px;
-    margin-left: 235px;
+    float: right;
 }
 
 .star:hover {
     transform: scale(1.05);
     cursor: pointer;
+}
+.cardFooter{
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 60px;
+}
+.deleteButton {
+    float: left;
+    margin-top: 3px;
+    margin-bottom: 3px !important;
 }
 
 .card {

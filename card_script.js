@@ -19,9 +19,10 @@ let array = [
     }
 ];
 
-function createCardDiv() {
+function createCardDiv(i) {
     let myCardDiv = document.createElement("div");
     myCardDiv.setAttribute("class", "card");
+    myCardDiv.setAttribute("id", "mainCardId".concat(i));
     document.getElementById("container").appendChild(myCardDiv);
     return myCardDiv;
 }
@@ -39,57 +40,64 @@ function createCardDescription(i, myCardDiv) {
     myDescription.innerHTML = array[i].description;
     myCardDiv.appendChild(myDescription);
 }
+function createCardFooter(myCardDiv) {
+    let myFooter = document.createElement("div");
+    myFooter.setAttribute("class", "cardFooter");
+    myCardDiv.appendChild(myFooter);
+    return myFooter;
+}
 
-function createStar(i, myCardDiv) {
+function createStar(i, myFooter) {
     let myStar = document.createElement("div");
     myStar.setAttribute("class", "glyphicon glyphicon-star-empty star");
     myStar.setAttribute("onclick", "changeClass(" + i + ")");
     myStar.setAttribute("id", i);
-    myCardDiv.appendChild(myStar);
+    myFooter.appendChild(myStar);
 }
 
+function createDeleteButton(i, myFooter) {
+    let deleteButton = document.createElement("button");
+    deleteButton.setAttribute("class", "btn btn-danger deleteButton");
+    deleteButton.setAttribute("id", "deleteBut".concat(i));
+    deleteButton.innerHTML = 'Usuń';
+    deleteButton.setAttribute("onclick", "deleteCard(" + i + ")");
+    myFooter.appendChild(deleteButton);
+}
 function createSingleCard(i) {
-    let myCardDiv = createCardDiv();
+    let myCardDiv = createCardDiv(i);
     createCardTitle(i, myCardDiv);
     createCardDescription(i, myCardDiv);
-    createStar(i, myCardDiv);
+    let myFooter = createCardFooter(myCardDiv);
+    createStar(i, myFooter);
+    createDeleteButton(i, myFooter);
 }
 
 function createCards() {
-    for (let i = 0; i < array.length - 1; i++) {
+    for (let i = 0; i < array.length; i++) {
         createSingleCard(i);
     }
 }
-
-function createNewCard(i) {
-    let myCardDiv = createCardDiv();
-    createCardTitle(i, myCardDiv);
-    createCardDescription(i, myCardDiv);
-    createStar(i, myCardDiv);
-}
-
 document.getElementById("addCardButton").addEventListener("click", addCard);
 function addCard() {
-    console.log(document.getElementById("title"));
     let formTitle = document.getElementById("title");
     let fromDes = document.getElementById("recipeDescription");
     let addCardId = array.length;
 
     addCardContent(formTitle.value, fromDes.value);
-    createNewCard(addCardId)
+    createSingleCard(addCardId);
     formTitle.value = '';
     fromDes.value = '';
-
-    console.log(formTitle);
-    console.log(fromDes);
-
 }
-function addCardContent(a, b) {
+function addCardContent(title, description) {
     array.push({
         uniqueNum: array.length + 1,
-        title: a,
-        description: b
-    })
+        title: title,
+        description: description
+    });
+}
+function deleteCard(cardId) {
+    let deleteAction = document.getElementById("mainCardId".concat(cardId))
+    return document.getElementById("container").removeChild(deleteAction);
 }
 function changeClass(starId) {
     let star = document.getElementById(starId);
